@@ -6,11 +6,11 @@ var User;
 
 var userSchema = mongoose.Schema({
   createdAt: {type: Date, default: Date.now, required: true},
-  name: {type: String, required: true},
-  email: {type: String, required: true},
-  password: {type: String, required: true},
-  picture: {type: String, required: true},
-  Items: [{type: mongoose.Schema.ObjectId, ref: 'Item'}]
+  name:      {type: String, required: true},
+  email:     {type: String, required: true},
+  password:  {type: String, required: true},
+  picture:   {type: String, required: true},
+  Items:     [{type: mongoose.Schema.ObjectId, ref: 'Item'}]
 });
 
 userSchema.statics.register = function(o, cb) {
