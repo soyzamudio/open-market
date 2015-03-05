@@ -6,7 +6,7 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') Open-Market
+      a.navbar-brand(ui-sref='home') Open-Market
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-show='name')
         li: a(ui-sref='home', ng-click='logout()') {{name}}
@@ -17,7 +17,7 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
           ul.dropdown-menu(role='menu')
             li: a(href='#') My Items
             li.divider
-            li: a(href='#') Add Item
+            li: a(ui-sref='items.new', href='#') Add Item
             li.divider
             li: a(href='#') Pending Swaps
       ul.nav.navbar-nav.navbar-right(ng-show='!name')
