@@ -10,7 +10,8 @@ angular.module('open-market', ['ui.router'])
       .state('login', { url: '/login', templateUrl: 'views/users/users.html', controller: 'UsersCtrl' })
 
       .state('items', { url: '/items', templateUrl: 'views/items/items.html', abstract: true })
-      .state('items.new', { url: '/new', templateUrl: 'views/items/items-new.html', controller: 'ItemsNewCtrl'});
+      .state('items.new', { url: '/new', templateUrl: 'views/items/items-new.html', controller: 'ItemsNewCtrl' })
+      .state('items.list', { url: '', templateUrl: 'views/items/items-list.html', controller: 'ItemsListCtrl' });
   }])
   .run(['$rootScope', 'User', function($rootScope, User) {
     User.status().then(function(response) {

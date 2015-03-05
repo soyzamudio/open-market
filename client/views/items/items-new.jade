@@ -1,1 +1,18 @@
 h1 Create Item
+
+.container
+  .row
+    form
+      .form-group
+        input.form-control(ng-model='item.name', type='text', placeholder='Name')
+      .form-group
+        input.form-control(ng-model='item.price', type='number', placeholder='$$$')
+      .form-group
+        input.form-control(ng-model='item.image', type='url', placeholder="Item's picture")
+      .form-group
+        textarea.form-control(ng-model='item.description', placeholder='description')
+      .form-group
+        input.form-control(ng-model='item.category', type='text', placeholder='Category')
+      .form-group
+        button.bnt.btn-default(ng-click='submit(item)') Create item
+      
