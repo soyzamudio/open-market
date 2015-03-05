@@ -1,8 +1,9 @@
+'use strict';
+
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var less = require('gulp-less');
 var lint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
 var copy = require('gulp-copy');
 var watch = require('gulp-watch');
 
