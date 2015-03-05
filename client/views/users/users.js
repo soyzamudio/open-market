@@ -18,7 +18,7 @@ angular.module('open-market')
       } else {
         User.login(user).then(function(response) {
           $state.go('home');
-          $rootScope.email = response.data.name;
+          $rootScope.name = response.data.name;
         }, function() {
           user.name = user.picture = user.email = user.password1 = user.password2 = '';
         });

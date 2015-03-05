@@ -4,7 +4,7 @@ var User = require('../../models/user');
 var Joi = require('joi');
 
 module.exports = {
-  // auth: false,
+  auth: false,
   validate: {
     payload: {
       name:     Joi.string().required(),
