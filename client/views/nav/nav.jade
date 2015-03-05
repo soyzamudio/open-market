@@ -1,0 +1,18 @@
+nav.navbar.navbar-default(ng-controller='NavCtrl')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') Open-Market
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right(ng-show='name')
+        li: a {{name}}
+      ul.nav.navbar-nav.navbar-right(ng-show='!name')
+        li: a(ui-sref='register') Register
+        li: a(ui-sref='login') Login
+      ul.nav.navbar-nav.navbar-right
+        li: a(ui-sref='home') Home
+      

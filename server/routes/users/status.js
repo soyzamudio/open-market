@@ -2,6 +2,6 @@
 
 module.exports = {
   handler: function(request, reply) {
-    reply.view('templates/general/home');
+    reply({name: request.auth.credentials.name});
   }
 };
