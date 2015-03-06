@@ -1,0 +1,5 @@
+h1 Pending swaps
+
+.page-header(ng-repeat='item in pending'): h3 {{item.name}}
+  ul
+    li(ng-repeat='swap in item.pending') {{swap.name}}

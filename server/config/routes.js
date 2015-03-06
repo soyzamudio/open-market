@@ -12,6 +12,7 @@ module.exports = [
   {method: 'post', path: '/items/create', config: require('../routes/items/create')},
   {method: 'get', path: '/items', config: require('../routes/items/index')},
   {method: 'get', path: '/items/{itemId}', config: require('../routes/items/show')},
-  {method: 'post', path: '/items/pending', config: require('../routes/items/pending')}
+  {method: 'post', path: '/items/pending', config: require('../routes/items/pending')},
+  {method: 'get', path: '/items/swap', config: require('../routes/items/swap')}
 
 ];
