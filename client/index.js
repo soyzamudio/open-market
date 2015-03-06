@@ -11,11 +11,13 @@ angular.module('open-market', ['ui.router'])
 
       .state('items', { url: '/items', templateUrl: 'views/items/items.html', abstract: true })
       .state('items.new', { url: '/new', templateUrl: 'views/items/items-new.html', controller: 'ItemsNewCtrl' })
-      .state('items.list', { url: '', templateUrl: 'views/items/items-list.html', controller: 'ItemsListCtrl' });
+      .state('items.list', { url: '', templateUrl: 'views/items/items-list.html', controller: 'ItemsListCtrl' })
+      .state('items.show', { url: '/{itemId}', templateUrl: 'views/items/items-show.html', controller: 'ItemsShowCtrl'});
   }])
   .run(['$rootScope', 'User', function($rootScope, User) {
     User.status().then(function(response) {
       console.log(response.data.name);
       $rootScope.name = response.data.name;
+      $rootScope.id = response.data.id;
     });
   }]);

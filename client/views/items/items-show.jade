@@ -1,0 +1,12 @@
+h1 Show
+h5 {{item.status}}
+ul
+  li {{item.name}}
+  li {{item.description}}
+  li {{item.price}}
+  li {{item.category}}
+  
+  form
+    select(ng-show='name && id !== item.userId', ng-model='itemSelected', ng-options="opt as opt.name for opt in userItems")
+    button(ng-show='name && id !== item.userId', ng-click='pending(item._id, itemSelected._id)') Swap
+  button(ng-show='!name') Login

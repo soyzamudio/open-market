@@ -11,5 +11,13 @@ angular.module('open-market')
       return $http.get('/items');
     }
 
-    return {create:create, find:find};
+    function show(itemId) {
+      return $http.get('/items/' + itemId);
+    }
+
+    function pending(itemId, swapingId) {
+      return $http.post('items/pending', {params:{itemId: itemId, swapingId: swapingId}});
+    }
+
+    return {create:create, find:find, show:show, pending:pending};
   }]);

@@ -116,19 +116,65 @@ describe('users', function() {
   });
 
   describe('get /', function() {
-   it('should get all the items', function(done) {
-     var options = {
-       method:'get',
-       url:'/',
-       headers: {
-         cookie: cookie
-       }
-     };
-     server.inject(options, function(response) {
-       expect(response.statusCode).to.equal(200);
-       done();
-     });
-   });
- });
+    it('should get all the items', function(done) {
+      var options = {
+        method:'get',
+        url:'/',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+  });
 
+  describe('get /show/3', function() {
+    it('should show one item', function(done) {
+      var options = {
+        method:'get',
+        url:'/items/0000000000000000000000a1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it('should not show item', function(done) {
+      var options = {
+        method:'get',
+        url:'/items/1234',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(400);
+        done();
+      });
+    });
+
+    describe('get /items/pending', function() {
+      it('should add to pending', function(done) {
+        var options = {
+          method:'put',
+          url:'/items/0000000000000000000000a1',
+          headers: {
+            cookie: cookie
+          }
+        };
+        server.inject(options, function(response) {
+          expect(response.statusCode).to.equal(200);
+          done();
+        });
+      });
+    });
+
+  });
 });
