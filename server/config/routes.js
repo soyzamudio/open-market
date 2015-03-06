@@ -13,6 +13,7 @@ module.exports = [
   {method: 'get', path: '/items', config: require('../routes/items/index')},
   {method: 'get', path: '/items/{itemId}', config: require('../routes/items/show')},
   {method: 'post', path: '/items/pending', config: require('../routes/items/pending')},
-  {method: 'get', path: '/items/swap', config: require('../routes/items/swap')}
+  {method: 'get', path: '/items/swap', config: require('../routes/items/swap')},
+  {method: 'post', path: '/items/swap', config: require('../routes/items/makeSwap')}
 
 ];

@@ -5,4 +5,15 @@ angular.module('open-market')
     Item.getPending().then(function(response) {
       $scope.pending = response.data.items;
     });
+
+    $scope.acceptSwap = function(itemId, swapId) {
+      // alert('21 BITCHES!');
+      console.log('ItemID:', itemId);
+      console.log('SwapID:', swapId);
+      Item.acceptSwap(itemId, swapId).then(function() {
+        $state.go('home');
+      }, function() {
+        console.log('cannot swap');
+      });
+    };
   }]);
