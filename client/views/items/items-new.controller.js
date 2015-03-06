@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('open-market')
-  .controller('ItemsNewCtrl', ['$scope', '$state', 'Item', function($scope, $state, Item) {
+  .controller('ItemsNewCtrl', ['$rootScope', '$scope', '$state', 'Item', function($rootScope, $scope, $state, Item) {
+    if (!$rootScope.name) {
+      $state.go('home');
+    }
+
     $scope.submit = function(item) {
       Item.create(item).then(function() {
         $state.go('items.list');
