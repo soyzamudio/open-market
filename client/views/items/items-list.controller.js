@@ -8,5 +8,7 @@ angular.module('open-market')
 
     Item.find().then(function(response) {
       $scope.items = response.data.items;
+    //  $scope.hasitems= response.data.items.length;
+  //   console.log('There is some items?*********' + items.length);
     });
   }]);
