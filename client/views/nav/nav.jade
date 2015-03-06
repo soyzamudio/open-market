@@ -19,7 +19,7 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
             li.divider
             li: a(ui-sref='items.new') Add Item
             li.divider
-            li: a(href='#') Pending Swaps
+            li: a(ui-sref='items.swap') Pending Swaps
       ul.nav.navbar-nav.navbar-right(ng-show='!name')
         li: a(ui-sref='register') Register
         li: a(ui-sref='login') Login
