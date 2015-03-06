@@ -44,7 +44,7 @@ describe('users', function() {
       };
       server.inject(options, function(response) {
         expect(response.statusCode).to.equal(200);
-        expect(response.result.items[0]).to.include({name: 'honda'});
+        expect(response.result.items[0]).to.include({description: 'car'});
         done();
       });
     });
@@ -71,6 +71,64 @@ describe('users', function() {
         done();
       });
     });
+
+    it('should NOT create the new item - missing name', function(done) {
+      var options = {
+        method: 'post',
+        url: '/items/create',
+        headers: {
+          cookie: cookie
+        },
+        payload: {
+          name: '',
+          description: 'car',
+          price: 200,
+          image: 'http://car.com',
+          category: 'transportation'
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(400);
+        done();
+      });
+    });
+
+    it('should NOT create the new item - missing image', function(done) {
+      var options = {
+        method: 'post',
+        url: '/items/create',
+        headers: {
+          cookie: cookie
+        },
+        payload: {
+          name: 'Hyundai',
+          description: 'car',
+          price: 200,
+          image: '',
+          category: 'transportation'
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(400);
+        done();
+      });
+    });
   });
+
+  describe('get /', function() {
+   it('should get all the items', function(done) {
+     var options = {
+       method:'get',
+       url:'/',
+       headers: {
+         cookie: cookie
+       }
+     };
+     server.inject(options, function(response) {
+       expect(response.statusCode).to.equal(200);
+       done();
+     });
+   });
+ });
 
 });

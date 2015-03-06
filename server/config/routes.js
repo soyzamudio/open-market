@@ -2,6 +2,7 @@
 
 module.exports = [
   {method: 'get', path: '/{param*}', config: require('../routes/general/static')},
+  {method: 'get', path: '/home', config: require('../routes/general/index')},
 
   {method: 'get', path: '/status', config: require('../routes/users/status')},
   {method: 'post', path: '/register', config: require('../routes/users/create')},

@@ -15,9 +15,9 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
           a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Items &nbsp;
             i.fa.fa-chevron-down
           ul.dropdown-menu(role='menu')
-            li: a(href='#') My Items
+            li: a(ui-sref='items.list') My Items
             li.divider
-            li: a(ui-sref='items.new', href='#') Add Item
+            li: a(ui-sref='items.new') Add Item
             li.divider
             li: a(href='#') Pending Swaps
       ul.nav.navbar-nav.navbar-right(ng-show='!name')
