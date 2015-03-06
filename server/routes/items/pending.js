@@ -16,7 +16,7 @@ module.exports = {
               to: [{email: item.userId.email, name: item.userId.name}],
               from_email: itemTwo.userId.email,
               subject: 'Someone want to swap for your ' + item.name + '!',
-              text: 'Jose wants to swap his ' + itemTwo.name + ' for your ' + item.name + '!'
+              text: 'Jose wants to swap his ' + itemTwo.name + ' for your ' + item.name + '!\n http://localhost:3333/#/items/' + itemTwo._id
               }
             }, function(error, response) {
               if (error) { console.log(JSON.stringify(error)); }

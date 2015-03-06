@@ -12,7 +12,7 @@ var itemSchema = mongoose.Schema({
   userId:       {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
   canSwap:      {type: Boolean},
   timesSwapped: {type: Number, default: 0},
-  pending:      [{type: mongoose.Schema.ObjectId, ref: 'User'}],
+  pending:      [{type: mongoose.Schema.ObjectId, ref: 'Item'}],
   status:       {type: String, default: 'available'}
 });
 
