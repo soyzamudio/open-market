@@ -10,7 +10,7 @@ var userSchema = mongoose.Schema({
   email:     {type: String, required: true},
   password:  {type: String, required: true},
   picture:   {type: String, required: true},
-  Items:     [{type: mongoose.Schema.ObjectId, ref: 'Item'}]
+  items:     [{type: mongoose.Schema.ObjectId, ref: 'Item'}]
 });
 
 userSchema.statics.register = function(o, cb) {

@@ -6,6 +6,10 @@ angular.module('open-market')
     function create(item) {
       return $http.post('/items/create', item);
     }
-    
-    return {create:create};
+
+    function find() {
+      return $http.get('/items');
+    }
+
+    return {create:create, find:find};
   }]);

@@ -1,0 +1,38 @@
+[
+  {
+    "_id":         {"$oid":"0000000000000000000000a1"},
+    "name":        "honda",
+    "description": "car",
+    "price":       200,
+    "image":       "http://car.com",
+    "category":    "transportation",
+    "userId":      {"$oid" : "000000000000000000000001"}
+  },
+  {
+    "_id" : {"$oid":"0000000000000000000000a2"},
+    "name": "benz",
+    "description": "car",
+    "price": 200,
+    "image": "http://car.com",
+    "category": "transportation",
+    "userId": {"$oid" : "000000000000000000000001"}
+  },
+  {
+    "_id" : {"$oid":"0000000000000000000000b1"},
+    "name": "mitsubishi",
+    "description": "car",
+    "price": 200,
+    "image": "http://car.com",
+    "category": "transportation",
+    "userId": {"$oid" : "000000000000000000000002"}
+  },
+  {
+    "_id" : {"$oid":"0000000000000000000000b2"},
+    "name": "infiniti",
+    "description": "car",
+    "price": 200,
+    "image": "http://car.com",
+    "category": "transportation",
+    "userId": {"$oid" : "000000000000000000000002"}
+  }
+]

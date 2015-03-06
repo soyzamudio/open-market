@@ -14,7 +14,6 @@ module.exports = {
     }
   },
   handler: function(request, reply) {
-    console.log(request.payload);
     request.payload.userId = request.auth.credentials._id;
     var item = new Item(request.payload);
     item.save(function(err) {

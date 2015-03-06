@@ -8,5 +8,6 @@ module.exports = [
   {method: 'post', path: '/login', config: require('../routes/users/login')},
   {method: 'delete', path: '/logout', config: require('../routes/users/logout')},
 
-  {method: 'post', path: '/items/create', config: require('../routes/items/create')}
+  {method: 'post', path: '/items/create', config: require('../routes/items/create')},
+  {method: 'get', path: '/items', config: require('../routes/items/index')}
 ];
