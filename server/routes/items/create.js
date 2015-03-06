@@ -2,6 +2,7 @@
 
 var Item = require('../../models/item');
 var Joi = require('joi');
+var _ = require('lodash');
 
 module.exports = {
   validate: {
@@ -15,7 +16,17 @@ module.exports = {
   },
   handler: function(request, reply) {
     request.payload.userId = request.auth.credentials._id;
+    var category = request.payload.category.split(',');
+    category = category.map(function(e) {
+      return _.kebabCase(e);
+    });
+
+    console.log(category);
+
+    request.payload.category = category;
+
     var item = new Item(request.payload);
+    console.log(item);
     item.save(function(err) {
       if (err) { reply().code(400); }
       reply(item).code(200);

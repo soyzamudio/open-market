@@ -24,8 +24,6 @@ angular.module('open-market')
     }
 
     function acceptSwap(itemId, swapId) {
-      console.log(itemId);
-      console.log(swapId);
       return $http.post('/items/swap', {params:{itemId: itemId, swapId: swapId}});
     }
 
