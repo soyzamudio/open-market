@@ -5,7 +5,17 @@ angular.module('open-market')
     $scope.logout = function() {
       User.logout().then(function() {
         $rootScope.name = '';
+        $scope.user.email = $scope.user.password = '';
         $state.go('home');
+      });
+    };
+
+    $scope.login = function(user) {
+      User.login(user).then(function(response) {
+        $state.go('home');
+        $rootScope.name = response.data.name;
+      }, function() {
+        user.name = user.picture = user.email = user.password1 = user.password2 = '';
       });
     };
   }]);

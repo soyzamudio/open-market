@@ -6,14 +6,18 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(ui-sref='home') Open-Market
+      a.navbar-brand(ui-sref='home')
+        img(src='images/openmarket.png')
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-show='name')
-        li: a(ui-sref='home', ng-click='logout()') {{name}}
+        li: a(ui-sref='home', ng-click='logout()') Log Out
       ul.nav.navbar-nav.navbar-right(ng-show='name')
+        li: a(ui-sref='home') {{name}}
+      ul.nav.navbar-nav.navbar-right(ng-show='name')
+        li: a(ui-sref='home') Home
         li.dropdown
           a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Items &nbsp;
-            i.fa.fa-chevron-down
+            span.caret
           ul.dropdown-menu(role='menu')
             li: a(ui-sref='items.list') My Items
             li.divider
@@ -21,7 +25,17 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
             li.divider
             li: a(ui-sref='items.swap') Pending Swaps
       ul.nav.navbar-nav.navbar-right(ng-show='!name')
-        li: a(ui-sref='register') Register
-        li: a(ui-sref='login') Login
-      ul.nav.navbar-nav.navbar-right
-        li: a(ui-sref='home') Home
+        form.navbar-form.navbar-right(role='search')
+          .form-group
+            input.form-control(type='text', ng-model='user.email', placeholder='Email')
+            input.form-control(type='password', ng-model='user.password' placeholder='Password')
+            button.btn.btn-default(ng-click='login(user)') Log In
+            a.btn.btn-default(ui-sref='register', stye='margin-left: 10px !important;') Register
+        //- li: a(ui-sref='register') Register
+        //- li: a(ui-sref='login') Login
+        
+
+
+//- .form-group.form-input-sm
+//-   input.form-control(type='text', placeholder='Search')
+//-   button.btn.btn-primary(type='submit') Submit

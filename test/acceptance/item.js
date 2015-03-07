@@ -149,7 +149,7 @@ describe('users', function() {
     it('should not show item', function(done) {
       var options = {
         method:'get',
-        url:'/items/1234',
+        url:'/items/not-working',
         headers: {
           cookie: cookie
         }
@@ -167,6 +167,28 @@ describe('users', function() {
           url:'/items/0000000000000000000000a1',
           headers: {
             cookie: cookie
+          }
+        };
+        server.inject(options, function(response) {
+          expect(response.statusCode).to.equal(404);
+          done();
+        });
+      });
+    });
+
+    describe('post /items/swap', function() {
+      it('should create swap', function(done) {
+        var options = {
+          method:'post',
+          url:'/items/swap',
+          headers: {
+            cookie: cookie
+          },
+          payload: {
+            params: {
+              itemId: '0000000000000000000000b1',
+              swapId: '0000000000000000000000a2'
+            }
           }
         };
         server.inject(options, function(response) {
