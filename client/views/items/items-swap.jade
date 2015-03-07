@@ -2,15 +2,16 @@
 .container
   .row
     .list-group(ng-repeat='item in pending')
-      h1 Swap this item with your {{item.name}} 
-      a.list-group-item(ng-repeat='swap in item.pending')
+      p Swap below item with your 
+        a(ui-sref='items.show({itemId:item._id})') {{item.name}}
+      .list-group-item(ng-repeat='swap in item.pending')
         img(src='{{swap.image}}', width='80', height='70')
-        li Item: {{swap.name}}
+        li: a(ui-sref='items.show({itemId:swap._id})') {{swap.name}}
         li Description: {{swap.description}}
         li Category: {{swap.category}} 
         span.glyphicon.glyphicon-user Swap request from: {{swap.userId.name}} 
         br
-        span.glyphicon.glyphicon-chevron-right Status:{{swap.status}}
+        span.glyphicon.glyphicon-chevron-right Status: {{swap.status}}
         span.badge.a.btn-info.glyphicon.glyphicon-ok(ng-click='acceptSwap(item._id, swap._id)') Approve
         span.badge.a.btn-info.glyphicon.glyphicon-remove Deny
         
