@@ -1,5 +1,7 @@
 
-.container
+p(ng-show="!pending.length") You have no pending swap requests!
+
+.container(ng-show="pending") 
   .row
     .list-group(ng-repeat='item in pending')
       p Swap below item with your 
