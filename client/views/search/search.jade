@@ -7,7 +7,9 @@ section.all-items(style='padding-top: 40px;')
             td(width='15%', valign='middle')
               .photo.text-center
                 img.img-responsive(src='{{item.image}}', alt="{{item.name}}")
-            td(width='85%', valign="top")
-              .col-md-12
-                h3 {{item.name}}
-                h4 {{item.price}}
+            td.item(width='85%', valign="top")
+              h3: a(ui-sref='items.show({itemId:item._id})') {{item.name}}
+              h3.price-text-color ${{item.price}}
+              h5 Swapped {{item.timesSwapped}} times.
+              h5 Owned by: {{item.userId.name}}
+              

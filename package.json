@@ -23,10 +23,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server/index.js",
-    "localstart": "MONGO_URL=mongodb://localhost/open-market PORT=3333 nodemon -e js,jade server/index.js",
+    "localstart": "MANDRILL_KEY=jWRFdcOjZIgKXLiM_hv8VA MONGO_URL=mongodb://localhost/open-market PORT=3333 nodemon -e js,jade server/index.js",
     "clean": "rm -rf node_modules && rm -rf public && npm install && bower install && gulp build",
     "postinstall": "bower install && gulp build",
-    "test": "MONGO_URL=mongodb://localhost/open-market-test lab -v -m 50000 test/unit test/acceptance"
+    "test": "MANDRILL_KEY=jWRFdcOjZIgKXLiM_hv8VA MONGO_URL=mongodb://localhost/open-market-test lab -v -m 50000 test/unit test/acceptance"
   },
   "license": "MIT",
   "dependencies": {
