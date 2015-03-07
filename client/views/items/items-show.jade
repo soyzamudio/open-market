@@ -8,5 +8,6 @@ ul
   
   form
     select(ng-show='name && id !== item.userId', ng-model='itemSelected', ng-options="opt as opt.name for opt in userItems")
+      option(value='') Select an item
     button(ng-show='name && id !== item.userId', ng-click='pending(item._id, itemSelected._id)') Swap
   button(ng-show='!name') Login
