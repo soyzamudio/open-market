@@ -1,0 +1,13 @@
+section.all-items(style='padding-top: 40px;')
+  .container
+    .row
+      .col-md-12.search-item.jumbotron(ng-repeat='item in searchItems | filter : { name : search.name }')
+        table(width='100%')
+          tr
+            td(width='15%', valign='middle')
+              .photo.text-center
+                img.img-responsive(src='{{item.image}}', alt="{{item.name}}")
+            td(width='85%', valign="top")
+              .col-md-12
+                h3 {{item.name}}
+                h4 {{item.price}}
