@@ -13,7 +13,9 @@ angular.module('open-market', ['ui.router'])
       .state('items.new', { url: '/new', templateUrl: 'views/items/items-new.html', controller: 'ItemsNewCtrl' })
       .state('items.list', { url: '', templateUrl: 'views/items/items-list.html', controller: 'ItemsListCtrl' })
       .state('items.show', { url: '/{itemId:[0-9a-f]{24}}', templateUrl: 'views/items/items-show.html', controller: 'ItemsShowCtrl'})
-      .state('items.swap', { url: '/swap', templateUrl: 'views/items/items-swap.html', controller: 'SwapCtrl'});
+      .state('items.swap', { url: '/swap', templateUrl: 'views/items/items-swap.html', controller: 'SwapCtrl'})
+
+      .state('search', { url: '/search', templateUrl: 'views/search/search.html', controller: 'SearchCtrl'});
   }])
   .run(['$rootScope', 'User', function($rootScope, User) {
     User.status().then(function(response) {

@@ -13,7 +13,5 @@ angular.module('open-market')
         $scope.featured.push($scope.items[idx]);
         $scope.items.splice(idx, 1);
       }
-
-      console.log($scope.featured);
     });
   }]);
