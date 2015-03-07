@@ -1,10 +1,7 @@
-h1 Show
-h5 {{item.status}}
-ul
-  li {{item.name}}
-  li {{item.description}}
-  li {{item.price}}
-  li {{item.category}}
+.container
+  .row
+    .col-md-4
+      img(src='item.image')
   
   form
     select(ng-show='name && id !== item.userId', ng-model='itemSelected', ng-options="opt as opt.name for opt in userItems")

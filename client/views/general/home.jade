@@ -1,15 +1,12 @@
-section.featured.container-fluid
+section.featured.container-fluid.hidden-xs
   .container
     .row
       .row(style='margin-bottom: 20px;')
         .col-md-9
           h3 Featured Items
         .col-md-3
-          .controls.pull-right.hidden-xs
-            a.left.fa.fa-chevron-left.btn(href='#carousel', data-slide="prev")
-            a.right.fa.fa-chevron-right.btn(href='#carousel', data-slide="next")
 
-      #carousel.carousel.slide.hidden-xs(data-ride='carousel')
+      #carousel.carousel.slide(data-ride='carousel')
         .carousel-inner
           .item.active
             .row
@@ -21,7 +18,8 @@ section.featured.container-fluid
                     .row
                       .price.col-md-12
                         h4.name-truncate {{item.name}}
-                        h3.price-text-color ${{item.price}}
+                        h5(style='margin-top: 5px; color: #aaaaaa').name-truncate Owned by: {{item.userId.name}}
+                        h4.price-text-color Valued at ${{item.price}}
                       .separator.clear-left
                       a.more-info.col-md-12.text-center(ui-sref='items.show({itemId:item._id})') More Information
                         //- a.btn.btn-info(ui-sref='items.show({itemId:item._id})') More information
