@@ -12,7 +12,7 @@ var paths = {
   jadesrc: ['./client/**/*.jade'],
   lesssrc: ['./client/**/*.less'],
   codesrc: ['./client/**/*.js', './server/**/*.js'],
-  copysrc: ['./client/**/*.js', './client/**/*.mp3', './client/**/*.jpg', './client/**/*.wav', './client/**/*.png', './client/**/*.ico'],
+  copysrc: ['./client/**/*.js', './client/**/*.mp3', './client/**/*.jpg', './client/**/*.wav', './client/**/*.png', './client/**/*.ico', './client/**/*.svg'],
   jadedst: './public',
   lessdst: './public',
   copydst: './public'

@@ -1,33 +1,31 @@
-
-
 table.table.table-hover(ng-show="items.length !== 0")
-    thead
-      tr
-        th(colspan='4') All Items
-    tbody
-      th Picture
-      th Name 
-      th Price
-      th Category
-      th Status
-      tr(ng-repeat='item in items')
-        td
-          img(src='{{item.image}}', width='80', height='70')
-        td: a(ui-sref='items.show({itemId:item._id})') {{item.name}} 
-        td {{item.price}}
-        td
-          ul
-            li(ng-repeat='category in item.category') {{category}}
-        td {{item.status}}  
-        
-        
-        //- name:         {type: String, required: true},
-        //- price:        {type: Number, required: true},
-        //- description:  {type: String, required: true},
-        //- image:        {type: String, required: true},
-        //- category:     [{type: String, required: true}],
-        //- userId:       {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
-        //- canSwap:      {type: Boolean},
-        //- timesSwapped: {type: Number, default: 0},
-        //- pending:      [{type: mongoose.Schema.ObjectId, ref: 'User'}],
-        //- status:       {type: String, default: 'available'}
+  thead
+    tr
+      th(colspan='4') All Items
+  tbody
+    th Picture
+    th Name 
+    th Price
+    th Category
+    th Status
+    tr(ng-repeat='item in items')
+      td
+        img(src='{{item.image}}', width='80', height='70')
+      td: a(ui-sref='items.show({itemId:item._id})') {{item.name}} 
+      td {{item.price}}
+      td
+        ul
+          li(ng-repeat='category in item.category') {{category}}
+      td {{item.status}}  
+      
+      
+      //- name:         {type: String, required: true},
+      //- price:        {type: Number, required: true},
+      //- description:  {type: String, required: true},
+      //- image:        {type: String, required: true},
+      //- category:     [{type: String, required: true}],
+      //- userId:       {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
+      //- canSwap:      {type: Boolean},
+      //- timesSwapped: {type: Number, default: 0},
+      //- pending:      [{type: mongoose.Schema.ObjectId, ref: 'User'}],
+      //- status:       {type: String, default: 'available'}

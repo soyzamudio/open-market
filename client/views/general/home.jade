@@ -1,7 +1,46 @@
-h1 I am home.
+section.featured.container-fluid
+  .container
+    .row
+      .row(style='margin-bottom: 20px;')
+        .col-md-9
+          h3 Featured Items
+        .col-md-3
+          .controls.pull-right.hidden-xs
+            a.left.fa.fa-chevron-left.btn(href='#carousel', data-slide="prev")
+            a.right.fa.fa-chevron-right.btn(href='#carousel', data-slide="next")
 
-ul(ng-repeat='item in items')
-  li: a(ui-sref='items.show({itemId:item._id})') {{item.name}}
-  li {{item.userId.name}}
-  td
-    img(src='{{item.image}}', width='80', height='70')
+      #carousel.carousel.slide.hidden-xs(data-ride='carousel')
+        .carousel-inner
+          .item.active
+            .row
+              .col-sm-3(ng-repeat='item in featured track by $index', style='margin-bottom: 20px')
+                .col-item
+                  .photo
+                    img.img-responsive(src='{{item.image}}', alt="{{item.name}}", height='260', width='350')
+                  .info
+                    .row
+                      .price.col-md-12
+                        h4.name-truncate {{item.name}}
+                        h3.price-text-color ${{item.price}}
+                      .separator.clear-left
+                      a.more-info.col-md-12.text-center(ui-sref='items.show({itemId:item._id})') More Information
+                        //- a.btn.btn-info(ui-sref='items.show({itemId:item._id})') More information
+                      .clearfix
+
+section.all-items(style='padding-top: 40px;')
+  .container
+    .row
+      .col-md-12
+        table.table.table-hover
+          thead
+            tr
+              th Image
+              th Name
+              th Category
+              th Price
+          tbody
+            tr(ng-repeat='i in items track by $index')
+              td: img(src='{{i.image}}', height='40', width='40')
+              td {{i.name}}
+              td: span.label.label-info(ng-repeat='element in i.category', style='margin-right: 10px;'): {{element}}
+              td ${{i.price}}

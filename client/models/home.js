@@ -6,5 +6,9 @@ angular.module('open-market')
       return $http.get('/home');
     }
 
+    function login(user) {
+      return $http.post('/login', user);
+    }
+
     return {find:find};
   }]);
