@@ -1,6 +1,41 @@
 h1 Users Page
 
-table.table-hover(width='500')
-      tr(ng-repeat='user in users')
-        td(align='center', valign='center')
-          p {{user}}
+#carousel.carousel.slide(data-ride='carousel')
+  .carousel-inner
+    .item.active
+      .row
+        .col-sm-3(ng-repeat='user in users', style='margin-bottom: 20px')
+          .col-item
+            .photo
+              img.img-responsive(src='{{user.picture}}', alt="{{user.name}}", height='260', width='350')
+            .info
+              .row
+                .price.col-md-12
+                  h4.name-truncate {{user.name}}
+                  h5(style='margin-top: 5px; color: #aaaaaa').name-truncate Account created on: {{user.createdAt}}
+                  h4.price-text-color Email: {{user.email}}
+                .separator.clear-left
+                //- a.more-info.col-md-12.text-center(ui-sref='items.show({itemId:item._id})') More Information
+                  //- a.btn.btn-info(ui-sref='items.show({itemId:item._id})') More information
+                .clearfix
+
+
+
+
+
+
+
+
+
+
+
+
+           
+          //- 
+          //- createdAt: {type: Date, default: Date.now, required: true},
+          //- name:      {type: String, required: true},
+          //- email:     {type: String, required: true},
+          //- password:  {type: String, required: true},
+          //- picture:   {type: String, required: true},
+          //- items:     [{type: mongoose.Schema.ObjectId, ref: 'Item'}]
+          //- });
