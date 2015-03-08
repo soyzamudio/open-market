@@ -15,12 +15,18 @@ angular.module('open-market', ['ui.router'])
       .state('items.show', { url: '/{itemId:[0-9a-f]{24}}', templateUrl: 'views/items/items-show.html', controller: 'ItemsShowCtrl'})
       .state('items.swap', { url: '/swap', templateUrl: 'views/items/items-swap.html', controller: 'SwapCtrl'})
 
-      .state('search', { url: '/search', templateUrl: 'views/search/search.html', controller: 'SearchCtrl'});
+      .state('search', { url: '/search', templateUrl: 'views/search/search.html', controller: 'SearchCtrl'})
+
+      .state('users', { url: '/users', templateUrl: 'views/users/users-list.html', controller: 'UsersListCtrl' });
+
+
   }])
   .run(['$rootScope', 'User', function($rootScope, User) {
     User.status().then(function(response) {
       console.log(response.data.name);
       $rootScope.name = response.data.name;
       $rootScope.id = response.data.id;
+
+      
     });
   }]);

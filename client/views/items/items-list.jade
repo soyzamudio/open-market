@@ -1,46 +1,19 @@
-table.table.table-hover(ng-show="items.length !== 0")
-  thead
-    tr
-      th(colspan='4'): h3 Available to Swap
-  tbody
-    th Picture
-    th Name 
-    th Price
-    th Category
-    th Status
-    th Can Swap?
-    tr(ng-repeat='item in items | filter : { "canSwap" : true }')
-      td
-        img(src='{{item.image}}', width='80', height='70')
-      td: a(ui-sref='items.show({itemId:item._id})') {{item.name}} 
-      td {{item.price}}
-      td
-        ul
-          li(ng-repeat='category in item.category') {{category}}
-      td {{item.status}}  
-      td(ng-show='item.canSwap') Yes
-      
-table.table.table-hover(ng-show="items.length !== 0")
-  thead
-    tr
-      th(colspan='4'): h3 Not Available for Swap
-  tbody
-    th Picture
-    th Name 
-    th Price
-    th Category
-    th Status
-    th Can Swap?
-    tr(ng-repeat='item in items | filter : { "canSwap" : false }')
-      td
-        img(src='{{item.image}}', width='80', height='70')
-      td: a(ui-sref='items.show({itemId:item._id})') {{item.name}} 
-      td {{item.price}}
-      td
-        ul
-          li(ng-repeat='category in item.category') {{category}}
-      td {{item.status}}  
-      td(ng-show='item.canSwap') Yes
-      td(ng-show='!item.canSwap') No      
-      
-      
+
+
+table.table-hover(width='500')
+      tr(ng-repeat='item in items | filter : { "canSwap" : true }')
+        td(align='center', valign='center')
+          img(src='{{item.image}}', width='350', height='260')
+          br
+          | Status: {{item.status}}
+        td(ng-show='item.canSwap') Can swap: Yep
+        td(ng-show='!item.canSwap') Swap approval pending.. 
+       
+      tr(ng-repeat='item in items | filter : { "canSwap" : false }')
+        td(align='center', valign='center')
+          img(src='{{item.image}}', width='350', height='260')
+          br
+          | Status: {{item.status}}
+          p(ng-show='item.canSwap') Can swap: Yep
+          p(ng-show='!item.canSwap') Swap approval pending..
+          

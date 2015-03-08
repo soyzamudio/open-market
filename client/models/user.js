@@ -19,6 +19,13 @@ angular.module('open-market')
       return $http.delete('/logout');
     }
 
-    return {register:register, login:login, status:status, logout:logout};
+    function find() {
+      return $http.get('/users');
+
+    }
+
+
+
+    return {register:register, login:login, status:status, logout:logout, find:find};
 
   }]);
