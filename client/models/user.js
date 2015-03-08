@@ -24,8 +24,12 @@ angular.module('open-market')
 
     }
 
+    function show(userId) {
+      return $http.get('/users/' + userId);
+    }
 
 
-    return {register:register, login:login, status:status, logout:logout, find:find};
+
+    return {register:register, login:login, status:status, logout:logout, find:find, show:show};
 
   }]);

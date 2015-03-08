@@ -6,8 +6,8 @@ angular.module('open-market', ['ui.router', 'file-model'])
     $stateProvider
       .state('home', { url: '/', templateUrl: '/views/general/home.html', controller: 'HomeCtrl' })
 
-      .state('register', { url: '/register', templateUrl: '/views/users/users.html', controller: 'UsersCtrl' })
-      .state('login', { url: '/login', templateUrl: 'views/users/users.html', controller: 'UsersCtrl' })
+      .state('register', { url: '/register', templateUrl: '/views/users/authenticate.html', controller: 'UsersCtrl' })
+      .state('login', { url: '/login', templateUrl: 'views/users/authenticate.html', controller: 'UsersCtrl' })
 
       .state('items', { url: '/items', templateUrl: 'views/items/items.html', abstract: true })
       .state('items.new', { url: '/new', templateUrl: 'views/items/items-new.html', controller: 'ItemsNewCtrl' })
@@ -17,7 +17,9 @@ angular.module('open-market', ['ui.router', 'file-model'])
 
       .state('search', { url: '/search', templateUrl: 'views/search/search.html', controller: 'SearchCtrl'})
 
-      .state('users', { url: '/users', templateUrl: 'views/users/users-list.html', controller: 'UsersListCtrl' });
+      .state('users', { url: '/users', templateUrl: 'views/users/users.html', abstract: true })
+      .state('users.list', { url: '', templateUrl: 'views/users/users-list.html', controller: 'UsersListCtrl' })
+      .state('users.show', { url: '/{userId:[0-9a-f]{24}}', templateUrl: 'views/users/user-show.html', controller: 'UserShowCtrl' });
 
 
   }])
@@ -27,6 +29,6 @@ angular.module('open-market', ['ui.router', 'file-model'])
       $rootScope.name = response.data.name;
       $rootScope.id = response.data.id;
 
-      
+
     });
   }]);
