@@ -39,6 +39,6 @@ section.all-items(style='padding-top: 40px;')
           tbody
             tr(ng-repeat='i in items track by $index')
               td: img(src='{{i.image}}', height='40', width='40')
-              td {{i.name}}
+              td: a(ui-sref='items.show({itemId:i._id})') {{i.name}}
               td: span.label.label-info(ng-repeat='element in i.category', style='margin-right: 10px;'): {{element}}
               td ${{i.price}}
