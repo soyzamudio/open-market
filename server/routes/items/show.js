@@ -7,7 +7,7 @@ module.exports = {
     mode: 'try'
   },
   handler: function(request, reply) {
-    Item.findOne({_id: request.params.itemId}).exec(function(err, item) {
+    Item.findOne({_id: request.params.itemId}).populate('userId').exec(function(err, item) {
       if (request.auth.credentials) {
         Item.find({userId: request.auth.credentials._id}).populate('userId').exec(function(errTwo, items) {
           items.forEach(function(element, i) {

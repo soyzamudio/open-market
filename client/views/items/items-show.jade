@@ -1,10 +1,20 @@
-.container
-  .row
-    .col-md-4
-      img(src='item.image')
-  
-  form
-    select(ng-show='name && id !== item.userId', ng-model='itemSelected', ng-options="opt as opt.name for opt in userItems")
-      option(value='') Select an item
-    button(ng-show='name && id !== item.userId', ng-click='pending(item._id, itemSelected._id)') Swap
-  button(ng-show='!name') Login
+section(style='margin-top: 50px;')
+  .container.show-item
+    .row
+      .col-md-3.text-center
+        .col-md-12
+          .photo
+            img(src='{{item.image}}', height='auto', width='200')
+        .col-md-12(style='margin-top: 20px;')
+          form
+            .form-group
+              .input-group
+                select.form-control(ng-show='name && id !== item.userId._id', ng-model='itemSelected', ng-options="opt as opt.name for opt in userItems")
+                  option(value='') Select an item
+                span.input-group-btn
+                  button.btn.btn-info(ng-show='name && id !== item.userId._id', ng-click='pending(item._id, itemSelected._id)') Swap
+          a.btn.btn-info(ng-show='!name') Login
+      .col-md-9.show-info
+        h3(style='margin-top: 0px; margin-left: 0px') {{item.name}}
+        h5(style='margin-top: 5px; color: #aaaaaa') Owned by {{item.userId.name}}
+        p.text-justify {{item.description}}
