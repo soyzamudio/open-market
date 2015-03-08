@@ -15,7 +15,7 @@ angular.module('open-market')
         $state.go('home');
         $rootScope.name = response.data.name;
       }, function() {
-        user.name = user.picture = user.email = user.password1 = user.password2 = '';
+        user.email = user.password = '';
       });
     };
   }]);

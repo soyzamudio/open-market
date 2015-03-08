@@ -17,4 +17,13 @@ angular.module('open-market')
         console.log('cannot swap');
       });
     };
+
+    $scope.rejectSwap = function(itemId, swapId) {
+      // alert('21 BITCHES!');
+      console.log('ItemID:', itemId);
+      console.log('SwapID:', swapId);
+      Item.rejectSwap(itemId, swapId).then(function() {
+        $state.go('items.list');
+      });
+    };
   }]);

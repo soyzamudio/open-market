@@ -24,8 +24,12 @@ angular.module('open-market')
     }
 
     function acceptSwap(itemId, swapId) {
-      return $http.post('/items/swap', {params:{itemId: itemId, swapId: swapId}});
+      return $http.post('/items/swap/accept', {params:{itemId: itemId, swapId: swapId}});
     }
 
-    return {create:create, find:find, show:show, pending:pending, getPending:getPending, acceptSwap:acceptSwap};
+    function rejectSwap(itemId, swapId) {
+      return $http.post('/items/swap/reject', {params:{itemId: itemId, swapId: swapId}});
+    }
+
+    return {create:create, find:find, show:show, pending:pending, getPending:getPending, acceptSwap:acceptSwap, rejectSwap:rejectSwap};
   }]);

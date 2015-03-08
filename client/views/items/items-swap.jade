@@ -13,5 +13,5 @@
         br
         span.glyphicon.glyphicon-chevron-right Status: {{swap.status}}
         span.badge.a.btn-info.glyphicon.glyphicon-ok(ng-click='acceptSwap(item._id, swap._id)') Approve
-        span.badge.a.btn-info.glyphicon.glyphicon-remove Deny
+        span.badge.a.btn-info.glyphicon.glyphicon-remove(ng-click='rejectSwap(item._id, swap._id)') Deny
         
