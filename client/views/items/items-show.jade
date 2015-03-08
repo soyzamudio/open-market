@@ -13,7 +13,7 @@ section(style='margin-top: 50px;')
                   option(value='') Select an item
                 span.input-group-btn
                   button.btn.btn-info(ng-show='name && id !== item.userId._id', ng-click='pending(item._id, itemSelected._id)') Swap
-          a.btn.btn-info(ng-show='!name') Login
+          a.btn.btn-info(ng-show='!name', ui-sref='login') Login
       .col-md-9.show-info
         h3(style='margin-top: 0px; margin-left: 0px') {{item.name}}
         h5(style='margin-top: 5px; color: #aaaaaa') Owned by {{item.userId.name}}

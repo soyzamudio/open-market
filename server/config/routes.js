@@ -15,7 +15,11 @@ module.exports = [
   {method: 'post', path: '/items/pending', config: require('../routes/items/pending')},
   {method: 'get', path: '/items/swap', config: require('../routes/items/swap')},
   {method: 'post', path: '/items/swap', config: require('../routes/items/makeSwap')},
+    {method: 'post', path: '/items/swap/accept', config: require('../routes/items/makeSwap')},
+  {method: 'post', path: '/items/swap/reject', config: require('../routes/items/rejectSwap')},
   {method: 'get', path: '/search', config: require('../routes/items/search')},
+
   {method: 'get', path: '/users', config: require('../routes/users/index')}
+
 
 ];

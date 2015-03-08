@@ -1,4 +1,4 @@
-h1 Users Page
+h1 Registered users
 
 #carousel.carousel.slide(data-ride='carousel')
   .carousel-inner
@@ -14,15 +14,14 @@ h1 Users Page
                   h4.name-truncate {{user.name}}
                   h5(style='margin-top: 5px; color: #aaaaaa').name-truncate Account created on: {{user.createdAt}}
                   h4.price-text-color Email: {{user.email}}
-                .separator.clear-left
+                .separator.clear-right
+                  span.badge.btn-info.glyphicon.glyphicon-edit Edit
                 //- a.more-info.col-md-12.text-center(ui-sref='items.show({itemId:item._id})') More Information
                   //- a.btn.btn-info(ui-sref='items.show({itemId:item._id})') More information
-                .clearfix
+                
 
 
-
-
-
+              
 
 
 

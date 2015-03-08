@@ -26,11 +26,11 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
             li: a(ui-sref='items.swap') Pending Swaps
       ul.nav.navbar-nav.navbar-right(ng-show='!name')
         form.navbar-form.navbar-right(role='search')
-          .form-group
-            input.form-control(type='text', ng-model='user.email', placeholder='Email')
-            input.form-control(type='password', ng-model='user.password' placeholder='Password')
-            button.btn.btn-default(ng-click='login(user)') Log In
-            a.btn.btn-default(ui-sref='register', stye='margin-left: 10px !important;') Register
+          .form-group(style='margin-top: 6px;')
+            input.form-control.input-sm(type='text', ng-model='user.email', placeholder='Email')
+            input.form-control.input-sm(type='password', ng-model='user.password' placeholder='Password')
+            button.btn.btn-default.btn-xs(ng-click='login(user)') Log In
+            a.btn.btn-default.btn-xs(ui-sref='register', stye='margin-left: 10px !important;') Register
         //- li: a(ui-sref='register') Register
         //- li: a(ui-sref='login') Login
         
