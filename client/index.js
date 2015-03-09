@@ -28,7 +28,5 @@ angular.module('open-market', ['ui.router', 'file-model'])
       console.log(response.data.name);
       $rootScope.name = response.data.name;
       $rootScope.id = response.data.id;
-
-
     });
   }]);
