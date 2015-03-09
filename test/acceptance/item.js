@@ -155,7 +155,7 @@ describe('users', function() {
         }
       };
       server.inject(options, function(response) {
-        expect(response.statusCode).to.equal(400);
+        expect(response.statusCode).to.equal(500);
         done();
       });
     });
