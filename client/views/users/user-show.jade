@@ -4,7 +4,6 @@
       .col-md-3
         h3 {{user.name}}'s profile
         img.img-responsive(src='{{user.picture}}', alt="{{user.name}}", height='120', width='160')
-        h5 Profile created on {{user.createdAt}}
         h5 {{user.email}}
           
           
@@ -19,17 +18,18 @@
                     th Description
                     th Category
                     th CanSwap
-                    th timesSwapped
+                    th Swapped
                     th Status
                     
                 tbody
                   tr(ng-repeat='item in items')
-                    td {{item.name}}
+                    td 
+                      a.more-info.col-md-12.text-center(ui-sref='items.show({itemId:item._id})') {{item.name}} 
                     td ${{item.price}}
                     td {{item.description}}
                     td {{item.category}}
                     td {{item.canSwap}}
-                    td {{item.timesSwapped}}
+                    td {{item.timesSwapped}} times
                     td {{item.status}}
 
 
