@@ -5,7 +5,6 @@ angular.module('open-market')
 
     Home.find().then(function(response) {
       $scope.items = response.data.items;
-
       $scope.featured = [];
 
       for(var i = 0; i < 4; i++) {

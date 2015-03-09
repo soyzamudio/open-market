@@ -1,5 +1,36 @@
-h1 User show page
+.container
+  .row
+    .row(style='margin-bottom: 20px;')
+      .col-md-3
+        h3 {{user.name}}'s profile
+        img.img-responsive(src='{{user.picture}}', alt="{{user.name}}", height='120', width='160')
+        h5 Profile created on {{user.createdAt}}
+        h5 {{user.email}}
+          
+          
+        
+      .col-md-9
+        table.table.table-hover(ng-show='!items.length == 0')
+                h1(ng-show='items.length == 0') {{user.name}} has no items yet!  
+                thead
+                  tr
+                    th Item
+                    th Price
+                    th Description
+                    th Category
+                    th CanSwap
+                    th timesSwapped
+                    th Status
+                    
+                tbody
+                  tr(ng-repeat='item in items')
+                    td {{item.name}}
+                    td ${{item.price}}
+                    td {{item.description}}
+                    td {{item.category}}
+                    td {{item.canSwap}}
+                    td {{item.timesSwapped}}
+                    td {{item.status}}
 
-p {{user.name}}
 
-p {{items.length}}
+            

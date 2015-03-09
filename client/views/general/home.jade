@@ -18,7 +18,9 @@ section.featured.container-fluid.hidden-xs
                     .row
                       .price.col-md-12
                         h4.name-truncate {{item.name}}
-                        h5(style='margin-top: 5px; color: #aaaaaa').name-truncate Owned by: {{item.userId.name}}
+                        h5(style='margin-top: 5px; color: #aaaaaa').name-truncate Owned by: 
+                          a(ui-sref='users.show({userId:item.userId._id})') {{item.userId.name}}
+                        
                         h4.price-text-color Valued at ${{item.price}}
                       .separator.clear-left
                       a.more-info.col-md-12.text-center(ui-sref='items.show({itemId:item._id})') More Information

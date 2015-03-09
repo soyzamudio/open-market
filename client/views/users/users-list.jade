@@ -11,15 +11,10 @@ h1 Registered users
             .info
               .row
                 .price.col-md-12
-                  h4.name-truncate {{user.name}}
+                  a.name-truncate(ui-sref='users.show({userId:user._id})') {{user.name}}
                   h5(style='margin-top: 5px; color: #aaaaaa').name-truncate Account created on: {{user.createdAt}}
                   h4.price-text-color Email: {{user.email}}
-                .separator.clear-right
-                  span.badge.btn-info.glyphicon.glyphicon-edit Edit
-                  a.more-info.col-md-12.text-center(ui-sref='users.show({userId:user._id})') More Information
-                //-   //- a.btn.btn-info(ui-sref='items.show({itemId:item._id})') More information
-                
-
+              
 
               
 
@@ -29,12 +24,4 @@ h1 Registered users
 
 
 
-           
-          //- 
-          //- createdAt: {type: Date, default: Date.now, required: true},
-          //- name:      {type: String, required: true},
-          //- email:     {type: String, required: true},
-          //- password:  {type: String, required: true},
-          //- picture:   {type: String, required: true},
-          //- items:     [{type: mongoose.Schema.ObjectId, ref: 'Item'}]
-          //- });
+      

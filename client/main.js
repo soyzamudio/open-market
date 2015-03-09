@@ -16,5 +16,4 @@ $(document).ready(function() {
       $('#replacementSpace').css('height', '0');
     }
   });
-
 });
