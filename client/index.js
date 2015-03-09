@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('open-market', ['ui.router', 'file-model'])
+angular.module('open-market', ['ui.router'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
